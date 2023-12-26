@@ -20,13 +20,16 @@ public:
 
 protected:
 	virtual void BeginPlay() override;
+	virtual void InitAbilityActorInfo();
+
 	UPROPERTY(EditAnywhere, Category=Weapon)
 		TObjectPtr<USkeletalMeshComponent> Weapon;
 	UPROPERTY()
 		TObjectPtr<UAbilitySystemComponent> AbilitySystemComponent;
 	UPROPERTY()
-		TObjectPtr<UAttributeSet> AbilitySet;
+		TObjectPtr<UAttributeSet> AttributeSet;
 
 	// Inherited via IAbilitySystemInterface
 	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
+	UAttributeSet* GetAttributeSet() const { return AttributeSet;  }
 };

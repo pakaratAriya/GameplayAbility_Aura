@@ -21,12 +21,6 @@ public:
 	AAuraCharacter();
 	virtual void PossessedBy(AController* NewController) override;
 	virtual void OnRep_PlayerState() override;
-private:
-	void InitAbilityActorInfo();
-	UPROPERTY()
-		TObjectPtr<AAuraPlayerState> PlayerState;
-	UPROPERTY()
-		TObjectPtr<UAbilitySystemComponent> AbilitySystemComponent;
-	UPROPERTY()
-		TObjectPtr<UAttributeSet> AttributeSet;
+protected:
+	virtual void InitAbilityActorInfo() override;
 };
